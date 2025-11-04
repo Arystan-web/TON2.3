@@ -6,7 +6,7 @@ const { Telegraf } = require('telegraf');
 require('dotenv').config();
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
-const WEB_APP_URL = process.env.WEB_APP_URL || 'https://ton2-3.onrender.com'/;
+const WEB_APP_URL = process.env.WEB_APP_URL || 'https://ton2-3.onrender.com';
 const PORT = process.env.PORT || 10000;
 
 const DB_DIR = path.join(__dirname, 'db');

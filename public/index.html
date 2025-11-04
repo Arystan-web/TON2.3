@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TONMiner</title>
+<link rel="icon" href="/icon.png">
+<style>
+:root{--bg1:#007aff;--bg2:#003f8a;--card:rgba(255,255,255,0.06);--accent:#00c3ff}
+body{margin:0;font-family:Inter,Roboto,Arial,sans-serif;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#fff;display:flex;align-items:center;justify-content:center;height:100vh}
+.card{background:var(--card);backdrop-filter:blur(6px);padding:22px;border-radius:16px;width:380px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.25)}
+.logo{font-weight:800;color:#bfe9ff;font-size:24px;margin-bottom:6px}
+.miner{width:140px;height:140px;margin:12px auto;border-radius:12px;background:linear-gradient(135deg,#dff4ff,#bfe9ff);position:relative;overflow:hidden}
+.miner::after{content:'';position:absolute;left:-40px;top:0;width:80px;height:100%;background:radial-gradient(circle,rgba(255,255,255,0.9),rgba(255,255,255,0));transform:skewX(-20deg);animation:slide 2s linear infinite}
+@keyframes slide{0%{left:-80px}100%{left:260px}}
+.balance{font-size:18px;margin-top:8px;color:#eaf6ff}
+.info{color:rgba(255,255,255,0.85);margin-top:6px;font-size:13px}
+.controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
+.btn{background:linear-gradient(90deg,var(--accent),#2aa0ff);border:none;padding:10px 14px;border-radius:10px;color:#012435;font-weight:700;cursor:pointer}
+.small{font-size:13px;color:rgba(255,255,255,0.8);margin-top:10px}
+.footer{font-size:12px;color:rgba(255,255,255,0.6);margin-top:12px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">TONMiner</div>
+  <div class="miner" aria-hidden="true">⛏️</div>
+  <div class="balance">Баланс: <strong id="balance">0.000000</strong> TON</div>
+  <div class="info">Майнеры: <span id="miners">0</span> — доход: 0.0001 TON/минута с каждого</div>
+  <div class="controls">
+    <button class="btn" id="connect">🔗 Подключить кошелёк</button>
+    <button class="btn" id="buy">🛒 Купить ферму (1 TON)</button>
+    <button class="btn" id="withdraw">💸 Вывести</button>
+  </div>
+  <div class="small">Откройте приложение через бота в Telegram, чтобы привязать профиль.</div>
+  <div class="footer">TONMiner — виртуальная игра. Для реальных выплат нужна проверка транзакций.</div>
+</div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://unpkg.com/@tonconnect/sdk/dist/tonconnect-sdk.min.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
